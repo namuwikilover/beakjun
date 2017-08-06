@@ -1,7 +1,5 @@
-Croatia=['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=', 'a', 'e', 'k']; c=0
-
 # enter
-string=input()
+N=int(input()); string=input()
 
 # Variable init
 result=[]
@@ -11,10 +9,7 @@ for i in range(len(string)):
         if len(string[j:j+1+i])==i+1:
             result.append(string[j:j+1+i])
 
-if 'dz=' in result: c-=1
-for i in result:
-    if i in Croatia: c+=1
+result_again=[x for x in result if result.count(x) >= 2]; count_list=[]
+del result[:]
 
-print(c)
-
-
+print(len(result_again[-1]))

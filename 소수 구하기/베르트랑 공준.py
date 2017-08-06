@@ -7,6 +7,11 @@ def pgen(n): # Sieve of Eratosthenes generator by Dan Salmonsen
             yield q
             np.update(range(q*q, n+1, q+q)) 
 
-M, N = map(int, input().split())
-l=[value for value in list(pgen(N)) if value >= M]
-for i in l: print(i)
+l=[]
+while True:
+    n=int(input())
+    if n==0: break
+    l.append(n)
+
+for i in range(len(l)):
+    print(len([value for value in list(pgen(2*l[i])) if value>l[i]]))

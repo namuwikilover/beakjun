@@ -1,11 +1,8 @@
-import functools
-@functools.lru_cache(maxsize=None)
-def binomial(n, k):
-    if n == k or k ==0:                         #n == k 일때 헷갈림..
-        return 1
-    return binomial(n-1, k-1) + binomial(n-1, k)
-
-n,k = input().split()
-n = int(n)
-k = int(k)
-print(binomial(n,k)%10007)
+n,k = map(int, input().split())
+dp=[[0 for value in range(n+1)] for value in range(n+1)]
+for i in range(1, n+1):
+    for j in range(i+1):
+        if j==0 or i==j: dp[i][j]=1
+        else: dp[i][j]=(dp[i-1][j-1]+dp[i-1][j])%10007
+print(dp)
+print(dp[n][k])

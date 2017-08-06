@@ -1,7 +1,5 @@
-import math
-
-# print(math.pi)
-r=1
-a=math.pi*r*r
-print(a)
-print("%.6f" % (math.ceil(a*100)/100))
+# from math import pi
+pi=3.141593
+R=int(input())
+print("%.6f" % pi*R*R)
+print("%.6f" % 2*R)

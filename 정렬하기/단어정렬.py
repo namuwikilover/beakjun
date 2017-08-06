@@ -1,10 +1,7 @@
 import sys
-l=[]
-n=int(sys.stdin.readline())
+n=int(sys.stdin.readline()); l=[] 
 for i in range(n):
     l.append(sys.stdin.readline()[:-1])
+l=list(set(l))
 l.sort(key=lambda item:(len(item), item))
-nl=[]
-[nl.append(x) for x in l if x not in l]
-print(nl)
-print(l)
+for i in l: print(i)

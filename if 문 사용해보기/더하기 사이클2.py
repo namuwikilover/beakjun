@@ -1,25 +1,15 @@
-n = int(input())
+n=int(input()); c=0; a=0; b=0; count=0; add=0
+add=n
 
-def check(n) :
-    n=str(n)
-    prev_n=int(n[0])+int(n[1])
-    new_n=[]
-    new_n.append(n[1])
-    new_n.append(str(prev_n[0]))
-    s=''.join(new_n)
-    return int(s)
+while add!=n or c==0:
+    a=int(add/10); b=add%10; c=(a+b)%10
+    a=b; b=c;
+    add=a*10+b
+    count+=1
+    
+print(count)
 
-def main():
-    check_number = n
-    save=n
-    while True:
-        save=check(save)
-        if check_number == check(save) :
-            break
-            save=save
 
-if __name__ == '__main__':
-    main()
 
 
 
