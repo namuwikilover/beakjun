@@ -1,18 +1,10 @@
-figure=input()
-li=[]
-for i in range(figure):
-    li.append(input())
-DP=[]
-while True:
-    i=0
-    result+=li[i]
-    first=li[i+1]
-    second=li[i+2]
-    if first>second:
-        DP[i]=li[i]+first
-    else:
-        Dp[i]=li[i]+second
-    
+N=int(input()); l=[]; d=[0 for value in range(20)]
+for i in range(N): l.append(int(input()))
+for i in range(N):
+    if i==0: d[i]=0
+    elif i==1: d[i]=l[0]
+    elif i==2: d[i]=l[1]+l[0]
+    else: d[i]=max(l[i]+d[i-2], l[i]+d[i-1]+d[i-3])
 
-    i+=1
-    # li[figure]
+print(d)
+# print(max(2, 5))

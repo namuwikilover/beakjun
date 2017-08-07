@@ -12,17 +12,11 @@ def binSearch(ary, elem, first, last):
         return True
 
 N_list=[]; M_list=[]; result=[]
-
-# N input
-N=int(sys.stdin.readline()[:-1])
-N_list=list(map(int, sys.stdin.readline()[:-1].split()))
-
-# M input
-M=int(sys.stdin.readline()[:-1])
-M_list=list(map(int, sys.stdin.readline()[:-1].split()))
+N=int(sys.stdin.readline()[:-1]); N_list=list(map(int, sys.stdin.readline()[:-1].split()))
+M=int(sys.stdin.readline()[:-1]); M_list=list(map(int, sys.stdin.readline()[:-1].split()))
 
 N_list.sort()
 for M_item in M_list:
-    if binSearch(N_list, M_item, 0, len(N_list)-1) == True: print('1')
-    else: print('0')
+    if binSearch(N_list, M_item, 0, len(N_list)-1) == True: print('1', end=' ')
+    else: print('0', end=' ')
 

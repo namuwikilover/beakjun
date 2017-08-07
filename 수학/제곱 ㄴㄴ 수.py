@@ -1,7 +1,7 @@
-num1, num2 = input().split()
+def isSquare(number):
+    return int(number**0.5)**2==number
 
-num1 = int(num1)
-num2 = int(num2)
-
-for i in range(num1, num2+1):
-    print(i)
+min, max=map(int, input().split()); c=0
+for i in range(min, max+1):
+    if isSquare(i)==False: c+=1
+print(c)
