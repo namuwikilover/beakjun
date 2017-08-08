@@ -1,53 +1,42 @@
+import sys
+c=0; l=[]
+
 class Node:
     def __init__(self, data):
         self.left = None
         self.right = None
         self.data = data
-    def insert(self, data):
-        c=0
-        c+=1
+    def insert(self, data, i):
+        global c
+        global l
+
+        if i!=0: c+=1
         if self.data:
             if data < self.data:
                 if self.left is None:
                     self.left = Node(data)
+                    l.append(c)
                 else:
-                    self.left.insert(data)
+                    self.left.insert(data, i)
             elif data > self.data:
                 if self.right is None:
                     self.right = Node(data)
+                    l.append(c)
                 else:
-                    self.right.insert(data)
+                    self.right.insert(data, i)
         else:
             self.data = data
-        print('ㅋ' + str(c))
-
-    def lookup(self, data, parent=None):
-        if data < self.data:
-            if self.left is None:
-                return None, None
-            return self.left.looup(data, self)
-        elif data > self.data:
-            if self.right is None:
-                return None, None
-                return self.right.looup(data, self)
-        else:
-            return self, parent
-
-    def inorder(self):
-        if self.left:
-            self.left.inorder
-        print(self.data)
-        if self.right:
-            self.right.inorder
 
 def main():
     root=Node(0)                #generate tree....
-    number=int(input())
+    number=int(sys.stdin.readline()[:-1])
     input_number=[]
     for i in range(number):
-        input_number.append(input())
-        root.insert(input_number[i])
-        root.inorder()
-
+        if i==0: l.append(0)
+        input_number.append(sys.stdin.readline()[:-1])
+        root.insert(input_number[i], i)
+    for i in range(len(l)):
+        print(l[i])
+    
 if __name__ == '__main__':
     main()

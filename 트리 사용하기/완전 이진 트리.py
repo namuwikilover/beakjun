@@ -24,6 +24,16 @@ class Node:
             self.leftChild.print_tree()
         if self.rightChild:
             self.rightChild.print_tree()
+
+    def find_tree(self, val):
+        if(currentNode is None):
+            return False
+        if(val == currentNode.val):
+            print(self.val)
+        if self.leftChild:
+            self.leftChild.print_tree()
+        if self.rightChild:
+            self.rightChild.print_tree()
             
         
 class BST:

@@ -24,7 +24,7 @@ else:
         rl.append(k)
     max_value=max(rl)
     print(r_letter_count[max_value])
-    # print(r_letter_count(max_value))
+    print(r_letter_count(max_value))
 
 
 

@@ -10,5 +10,5 @@ for i in range(len(n)):
     for j in range(len(s[i])):
         for k in range(n[i]):
             print(s[i][j],end='')
-    print('\n')
+    print('')
             

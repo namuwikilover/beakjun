@@ -34,7 +34,7 @@ for i in range(len(matrix)):
     Graph[matrix[i][1]].append(matrix[i][0])
 
 
-# BFS를 이용한 그래프 탐색 경로를 출력하고, 각 정점에서 출발한 경로의 길이를 result 리스트에 저장.
+# BFS를 이용해서 그래프 탐색 경로를 출력하고, 각 정점에서 출발한 경로의 길이를 result 리스트에 저장.
 result=[]
 for i in range(1,6):
     result.append(len(BFS(i, 4, Graph)))
