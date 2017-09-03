@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\구현",
-    "\\문자열 사용하기",
+    "\\규칙 찾기",
     "\\문자열 처리",
-    "\\수학"
+    "\\문자열사용하기(중간)"
   ],
-  "SelectedNode": "\\문자열 처리\\카이사르 암호.py",
+  "SelectedNode": "\\문자열사용하기(중간)\\서로 다른 부분 문자열의 개수.py",
   "PreviewInSolutionExplorer": false
 }
