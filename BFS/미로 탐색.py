@@ -26,8 +26,6 @@ def bfsSearch(maze, N, M):
                 print(abs(maze[xNext][yNext]));
                 return;
 
-    print(maze)
-
 def main():
     N, M = map(int, input().split())
 
@@ -35,8 +33,6 @@ def main():
 
     for i in range(N):
         l.append(list(map(int, input())))
-
-    #print(l)
 
     bfsSearch(l, N, M);
     

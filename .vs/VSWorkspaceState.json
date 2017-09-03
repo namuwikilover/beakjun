@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\규칙 찾기",
-    "\\문자열 처리",
-    "\\문자열사용하기(중간)"
+    "\\BFS",
+    "\\그래프",
+    "\\그래프 이론"
   ],
-  "SelectedNode": "\\문자열사용하기(중간)\\서로 다른 부분 문자열의 개수.py",
+  "SelectedNode": "\\그래프 이론\\섬의 개수.py",
   "PreviewInSolutionExplorer": false
 }
