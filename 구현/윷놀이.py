@@ -12,4 +12,5 @@ for i in range(3):
     if count==3: print('C')
     if count==4: print('D')
     count=0
+	
     
