@@ -1,44 +1,41 @@
-import queue as Queue
-queue = Queue.Queue()    
+import sys;
 
-M, N = map(int, input().split()); Matrix=[]
-for i in range(N):
-    Matrix.append(list(map(int, input().split())))
+def bfsSearch(maze, N, M):
+    queue = [];
+    cur = 0;
 
-for i in range(N):
-    for j in range(M):
-        if Matrix[i][j]==1: 
-            ix=i; iy=j
+    xDirection = [0, 1, 0, -1];
+    yDirection = [1, 0, -1, 0];
+
+    queue.append([3, 5]);
+    maze[3][5] = -1;
+
+    while queue:
+        xCurrent, yCurrent = map(int, queue.pop(0));
+
+        for i in range(4):
+            xNext = xCurrent + xDirection[i];
+            yNext = yCurrent + yDirection[i];
+
+            if (xNext >= 0 and xNext < N) and (yNext >= 0 and yNext < M):
+                if maze[xNext][yNext] == 0:
+                    maze[xNext][yNext] = maze[xCurrent][yCurrent] - 1;
+                    queue.append([xNext, yNext]);
+
+            if xNext == 0 and yNext == 0:
+                print(abs(maze[xNext][yNext])-1);
+                return;
+
+def main():
+    M, N = map(int, input().split())
+
+    l = []
+
+    for i in range(N):
+        l.append(list(map(int, input().split())))
+
+
+    bfsSearch(l, N, M);
     
-queue.put([ix, iy]); count=0 # BFS 시작
-
-while queue:
-    curr = queue.get(); count+=1
-    print(curr);
-    if [0, 0] == curr:
-        print(int(count/3))
-        break
-    if curr[0]<4 and curr[0]>=0 and curr[1]+1<6 and curr[1]+1>=0:
-        if Matrix[curr[0]][curr[1]+1]==0: 
-            Matrix[curr[0]][curr[1]+1]=1    
-            queue.put([curr[0], curr[1]+1])
-        
-    if curr[0]+1<4 and curr[0]+1>=0 and curr[1]<6 and curr[1]>=0: 
-        if Matrix[curr[0]+1][curr[1]]==0:
-            Matrix[curr[0]+1][curr[1]]=1    
-            queue.put([curr[0]+1, curr[1]])
-        
-    if curr[0]<4 and curr[0]>=0 and curr[1]-1<6 and curr[1]-1>=0: 
-        if Matrix[curr[0]][curr[1]-1]==0:
-            Matrix[curr[0]][curr[1]-1]=1    
-            queue.put([curr[0], curr[1]-1])
-        
-    if curr[0]-1<4 and curr[0]-1>=0 and curr[1]<6 and curr[1]>=0: 
-        if Matrix[curr[0]-1][curr[1]]==0:
-            Matrix[curr[0]-1][curr[1]]=1
-            queue.put([curr[0]-1, curr[1]])
-    
-    
-
-
-
+if __name__ == "__main__":
+    sys.exit(int(main() or 0))
